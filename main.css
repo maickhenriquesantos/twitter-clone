@@ -1,0 +1,871 @@
+html, body {
+	font-family: "Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif ;
+	margin: 0;
+	font-size: 14px;
+	/*height: 100%;*/
+}
+
+body {
+	/*overflow-x: hidden;*/
+}
+
+@media screen and (max-width: 1800px){
+	#main {
+		display: grid;
+		grid-template-areas: "a b c";
+		grid-template-columns: minmax(100px, 3fr) minmax(533px, 5fr) minmax(230px, 4fr); 
+		grid-template-rows: auto;
+		height: 100%;
+		width: 100vw;
+	}
+
+	#main #account {
+		grid-area: a;
+	}
+
+	#main #account #navigation {
+		position: sticky;
+		top: 0px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#main #feed {
+		grid-area: b;
+		border-right: solid 1px;
+		border-left: solid 1px;
+		border-color: hsl(210,25%,88.4%);
+		display: flex;
+		flex-direction: column;
+	}
+
+	#main #explore {
+		grid-area: c;
+		
+	}
+
+	#main #explore #explore-content {
+		position: sticky;
+		top: 0px;
+		/*height: 100vh;*/
+		margin: 12px 2em 4em 2em;
+		min-width: 350px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#main #account #navigation #logo-area{
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5em 0 0.5em 4.2em;
+	}
+
+	#main #account #navigation #logo-area #logo {
+		width: 50px;
+		height: 50px;
+		min-width: 50px;
+		min-height: 50px;
+		border-radius: 50%;
+		background-image: url('https://github.com/kevinngetich/myfaketwitter/blob/master/images/logo.png?raw=true');
+		background-size: contain;
+		background-position: center;
+
+	}
+
+	#main #account #navigation #main-navbar{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0em 0em;
+	}
+
+	#main #account #navigation #main-navbar ul {
+		margin-left: -5em;
+	}
+
+	#main #account #navigation #main-navbar #nav-links{
+		margin-top: 0;
+		display: grid;
+		grid-template-rows: repeat(8, 4em);
+		/*grid-gap: 0em;*/
+		align-items: baseline;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link {
+		list-style-type: none;
+		padding: 0 1em 0 1em;
+		border-bottom-right-radius: 2em;
+		border-bottom-left-radius: 2em;
+		border-top-right-radius: 2em;
+		border-top-left-radius: 2em;
+		height: 3.25em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		/*background-color: grey;*/
+		/*grid-column-start: 1;*/
+		/*justify-content: center;*/
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link .nav-icon {
+		width: 2em;
+		height: 100%;
+		background-color: transparent;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link .nav-icon svg {
+		width: 100%;
+		height: 100%;
+		padding: 0.75em;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link .nav-link-text {
+		flex: 4;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+		margin-left: 2em;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link:hover {
+		background-color: #e8f5fe;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .nav-link a{
+		text-decoration: none;
+		color: black;
+	}
+
+	#main #account #navigation #main-navbar #nav-links .active .nav-link-text a {
+		color: #41b0f3;
+	}
+
+	#main #account #navigation #account-compose-tweet {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5em 4.2em;
+	}
+
+	#main #account #navigation #account-compose-tweet button {
+		width: 15rem;
+		height: 3.5em;
+		border-top-right-radius: 2em;
+		border-bottom-right-radius: 2em;
+		border-top-left-radius: 2em;
+		border-bottom-left-radius: 2em;
+		line-height: 1.3125;
+		font-size: 14px;
+		font-weight: 900;
+		color: white;
+		background-color: rgb(29, 161, 242);
+		border: none;
+	}
+
+	#main #account #navigation #account-compose-tweet button .btn-icon {
+		display: none;
+	}
+
+	@media screen and (max-width: 1320px) {
+		#main {
+			grid-template-columns: minmax(100px, 3fr) 630px minmax(300px, 7fr);
+			grid-template-rows: 1fr;
+			grid-template-areas: "a b c";
+			width: 100vw;
+			height: 100vh;
+		}
+
+		#main #account #navigation #logo-area{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 0em 1em;
+		}
+
+		#main #account #navigation #main-navbar {
+			align-items: flex-end;
+			padding: 0 1em;
+		}
+
+		#main #account #navigation #main-navbar #nav-links .nav-link .nav-link-text {
+			display: none;
+		}
+
+		#main #account #navigation #account-compose-tweet {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 0em 1em;
+		}
+
+		#main #account #navigation #account-compose-tweet button {
+			width: 4em;
+			height: 4em;
+			border-radius: 50%;
+			line-height: 1.3125;
+			font-size: 14px;
+			font-weight: 900;
+			color: white;
+			background-color: rgb(29, 161, 242);
+			border: none;
+		}
+
+		#main #account #navigation #account-compose-tweet button .btn-txt {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+
+		#main #account #navigation #account-compose-tweet button .btn-icon {
+			display: inline;
+		}
+	}
+
+	@media screen and (max-width: 1000px) {
+		#main {
+			grid-template-columns: minmax(100px, 1fr) minmax(600px, 3fr) 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "a b c";
+			width: 100vw;
+			height: 100%;
+		}
+
+		#main #explore #explore-content {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 700px){
+		#main {
+			grid-template-columns: minmax(70px, 100px) 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "a b";
+			width: 100vw;
+			height: 100%;
+		}
+
+		#main #account #navigation {
+			position: sticky;
+			top: 0px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+#main #feed #feed-nav {
+	border-bottom: solid 1px;
+	border-color: hsl(210,25%,88.4%);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1.75em;
+}
+
+#main #feed #feed-nav h2 a {
+	text-decoration: none;
+	color: black;
+	font-weight: 900;
+}
+
+#main #feed #feed-new-tweet {
+	display: flex;
+	flex-direction: row;
+	padding: 1em 2em;
+	display: flex;
+	flex-direction: row;
+	border-bottom: solid 0.75em hsl(210,25%,88.4%);
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-avatar {
+	flex: 2;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-avatar #feed-avatar-img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	/*background: red;*/
+	background-image: url('https://sm.ign.com/t/ign_br/articlepage/s/star-wars-/star-wars-digital-movie-collection-announced_2zx4.1280.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form {
+	flex: 13;
+	display: flex;
+	align-items: center;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form {
+	width: 100%;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form #tweet-text-input {
+	height: 60px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form #tweet-input {
+	border: none;
+	width: 100%;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form #tweet-input:focus {
+	outline: none;	
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form #tweet-input::-webkit-input-placeholder {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30px;
+	letter-spacing: 0.0em;
+	color: #acacac;
+
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form #tweet-input:focus::-webkit-input-placeholder {
+	color: #bcbcbc;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons {
+	padding-top: 1em;
+	flex: 1;
+	display: grid;
+	grid-template-columns: 2em 2em 2em 2em 2em;
+	flex-wrap: wrap;
+	grid-gap: 1.25em;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons .tweet-input-button {
+	/*grid-column-start: 1;*/
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	margin: auto auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons .tweet-input-button .this-icon {
+	width: 70%;
+	height: 70%;
+	/*background-color: red;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons .tweet-input-button .this-icon svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: rgba(29,161,242,1.00);
+}
+
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons .tweet-input-button:hover {
+	background-color: #e8f5fe;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #input-buttons .tweet-input-button #tweet-img {
+	grid-column: 1 1;
+}
+
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #submit-button {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 1em;
+}
+
+#main #feed #feed-new-tweet #feed-new-tweet-form form #form-buttons #submit-button button {
+	min-width: 6rem;
+	max-height: 5em;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+	line-height: 1.3125;
+	font-size: 14px;
+	font-weight: 900;
+	color: white;
+	background-color: rgb(29, 161, 242);
+	border: none;
+}
+
+
+#main #feed .tweets-area .tweet {
+	display: flex;
+	flex-direction: row;
+	padding: 1em 2em 0em 2em;
+	display: flex;
+	flex-direction: row;
+	border-bottom: solid 1px hsl(210,25%,88.4%);
+}
+
+#main #feed .tweets-area .tweet .tweet-avatar-area {
+	flex: 2;
+}
+
+#main #feed .tweets-area .tweet .tweet-avatar-area #tweet-01-author-avatar{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-image: url('https://network.grupoabril.com.br/wp-content/uploads/sites/4/2020/02/desafio-jedi-de-mestre-yoda-consertar-as-frases-consegue-vocecc82.jpg?quality=100&strip=info');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #feed .tweets-area .tweet .tweet-avatar-area #tweet-02-author-avatar{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-image: url('https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/05/68924-rey-chewbacca-star-wars-the-last-jedi-wide-169-lg.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #feed .tweets-area .tweet .tweet-avatar-area #tweet-03-author-avatar{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-image: url('https://www.jornaldamidia.com.br/wp-content/uploads/2016/12/starwone.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section {
+	flex: 13;
+	margin: 0 0 0 1em;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-top .tweet-author-name {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-top .tweet-author-name .screen-name {
+	margin: 0;
+	padding-right: 0.5em;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-top .tweet-author-name .user-name {
+	margin: 0;
+	color: 	#B0B0B0;
+	font-weight: 400;
+	letter-spacing: 0em;
+}
+
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-content .tweet-text {
+	margin: 0;
+	font-size: 18px;
+}	
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-content .tweet-img {
+	/*width: 100%;*/
+	height: auto;
+	margin: 10px 0 0 0;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-content .tweet-img #tweet_01_img {
+	border-radius: 16px;
+	width: 100%;
+	height: 300px;
+	background-image: url('https://i1.wp.com/sociedadejedi.com.br/wp-content/uploads/2017/04/YODA.jpg?resize=700%2C394&ssl=1');
+	background-position: center;
+	background-size: cover;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-content .tweet-img #tweet_03_img {
+	border-radius: 16px;
+	width: 100%;
+	height: 300px;
+	background-image: url('https://www.hypeness.com.br/1/2015/12/StarWars8.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons .action-item {
+	display: grid;
+	grid-template-columns: 2em 3.25em;
+	grid-gap: 0.75em;
+}
+
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons {
+	/*padding-top: 1em;*/
+	flex: 1;
+	display: grid;
+	grid-template-columns: 5.25em 5.25em 5.25em 5.25em;
+	flex-wrap: wrap;
+	grid-gap: 3em;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons .action-item .tweet-action-button {
+	width: 2.25em;
+	height: 2.25em;
+	border-radius: 50%;
+	margin: auto auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons .action-item .tweet-action-button:hover {
+	background-color: #e8f5fe;
+}
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons .action-item .tweet-action-button .this-icon {
+	width: 70%;
+	height: 70%;
+	/*background-color: red;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+#main #feed .tweets-area .tweet .tweet-main-section .tweet-actions .tweet-action-buttons .action-item .tweet-action-button .this-icon svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: rgba(29,161,242,1.00);
+}
+
+
+#main #explore #explore-search {
+	display: flex;
+	justify-content: center;
+}
+
+#main #explore #explore-search #search-form {
+	width: 100%;
+}
+
+#main #explore #explore-search #search-form #search-element {
+	display: flex;
+	width: 100%;
+}
+
+#main #explore #explore-search #search-form #search-element #search-box-icon-container {
+	/*flex: 2;*/
+	width: 17%;
+	min-height: 3em;
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+	background-color: hsl(210,35%,93.4%);
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0.25em;	
+}
+
+#main #explore #explore-search #search-form #search-element #search-box-icon-container svg {
+	height: 1.8em;
+	width: 1.8em;
+}
+
+#main #explore #explore-search #search-form #search-element #explore-search-input {
+	width: 83%;
+	height: 3.5em;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	background-color: hsl(210,35%,93.4%);
+	border: none;
+}
+
+#main #explore #explore-search #search-form #search-element #explore-search-input:focus {
+	background-color: hsl(0, 0%, 100%);
+	border: solid 0.15em rgb(29, 161, 242);
+	outline: none;
+}
+
+#main #explore #explore-search #search-form #search-element #explore-search-input::-webkit-input-placeholder {
+	line-height: 2.3125em;
+	/*transform: scale(1.45) translateX(20%);*/
+	/*transform: translateX(50%);*/
+	font-size: 1.3em;
+	font-weight: 400;
+	color: hsl(0, 0%, 60%);
+}
+
+
+
+#main #explore #explore-trends .whats-happening {
+	background-color: hsl(210,35%,96.4%);
+	border-radius: 1em;
+	margin-top: 2em;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-title-section {
+	padding: 0.1em 1em;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-title-section:hover {
+	background-color: hsl(210,35%,94%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-title-section h2 {
+	font-weight: 900;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section {
+	padding: 0.1em 1em;
+	border-top: solid 1px hsl(0, 0%, 90%);
+	display: flex;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section:hover {
+	background-color: hsl(210,35%,94%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-text {
+	flex: 6;
+	display: flex;
+	flex-direction: column;
+	margin: 1em 0;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra {
+	flex: 3;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 1em 0;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-text .section-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-text .section-header .trend-location p {
+	font-size: 15px;
+	font-weight: 300;
+	margin: 2px 0;
+	color: hsl(0, 0%, 35%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra .trend-options-button {
+	width: 1.75em;
+	height: 1.75em;
+	border-radius: 50%;
+	margin: auto auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 1em auto auto;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra .trend-options-button:hover {
+	background-color: hsl(210,65%,88%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra .trend-options-button .this-icon {
+	width: 70%;
+	height: 70%;
+	/*background-color: red;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra .trend-options-button .this-icon svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-text .section-content .trend-name p {
+	font-size: 18px;
+	font-weight: 700;
+	margin: 2px 0;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-text .section-footer .trend-details p {
+	font-size: 15px;
+	font-weight: 300;
+	margin: 2px 0;
+	color: hsl(0, 0%, 35%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra .trend-img {
+	width: 6em;
+	height: 6em;
+	border-radius: 1em;	
+	margin: 5px 0;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-content-section .section-extra #trend_01_img {
+	background-image: url('https://github.com/kevinngetich/myfaketwitter/blob/master/images/dogo.jpg?raw=true');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-footer-section {
+	padding: 1em 1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border-top:  solid 1px hsl(0, 0%, 90%);
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-footer-section a {
+	font-size: 18px;
+	text-decoration: none;
+}
+
+#main #explore #explore-trends .whats-happening .explore-trends-footer-section:hover {
+	background-color: hsl(210,35%,94%);
+}
+
+
+
+#main #explore #explore-who-to-follow .who-to-follow{
+	background-color: hsl(210,35%,96.4%);
+	border-radius: 1em;
+	margin-top: 2em;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-title-section {
+	padding: 0.1em 1em;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-title-section:hover {
+	background-color: hsl(210,35%,94%);
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-title-section h2 {
+	font-weight: 900;
+}
+
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person {
+	padding: 0.1em 1em;
+	border-top: solid 1px hsl(0, 0%, 90%);
+	display: flex;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person:hover {
+	background-color: hsl(210,35%,94%);
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-img {
+	flex: 3;
+	margin: 1em 0;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-img .avatar {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-img #explore_person_01 {
+	background-image: url('https://allmanaque.com/uploads/images/LUKE_SKYWALKER.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-img #explore_person_02 {
+	background-image: url('https://poltronanerd.com.br/wp-content/uploads/2020/09/Obi-Wan-Kenobi.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-img #explore_person_03 {
+	background-image: url('https://upload.wikimedia.org/wikipedia/en/b/be/Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-handle {
+	flex: 5;
+	margin: 1em 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-handle .screen-name p {
+	font-weight: 700;
+	font-size: 18px;
+	margin: 0 0;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-handle .user-name p {
+	font-size: 18px;
+	margin: 0 0;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-follow {
+	flex: 4;
+	margin: 1em 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-follow button {
+	width: 6rem;
+	height: 3em;
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+	line-height: 1.3125;	
+	border: solid 1px rgb(29, 161, 242);
+	background-color: transparent;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-follow button span {
+	font-size: 16px !important;
+	font-weight: 900;
+	color: rgb(29, 161, 242);
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-person .person-follow button:hover {
+	background-color: hsl(210,65%,88%);
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-footer-section {
+	padding: 1em 1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border-top:  solid 1px hsl(0, 0%, 90%);
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-footer-section a {
+	font-size: 18px;
+	text-decoration: none;
+}
+
+#main #explore #explore-who-to-follow .who-to-follow .explore-people-footer-section:hover {
+	background-color: hsl(210,35%,94%);
+}
